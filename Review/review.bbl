@@ -1,0 +1,475 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{region_growing}{article}{}
+      \name{author}{5}{}{%
+        {{hash=e9c03f44db9ba7ef67469af5d6c25e25}{%
+           family={Bouraoui},
+           familyi={B\bibinitperiod},
+           given={Bessem},
+           giveni={B\bibinitperiod}}}%
+        {{hash=82697c397dc2b286a91e7778d46e4f4e}{%
+           family={Ronse},
+           familyi={R\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7b96cdd66bcd4ce6f7185041808f3fe4}{%
+           family={Baruthio},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ceb9836e6d1e1a885674d347f4b34b51}{%
+           family={Passat},
+           familyi={P\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c56a3b6e9a353e06a8341a340048cc67}{%
+           family={Germain},
+           familyi={G\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c20aafd141a6f6004525b6459625e7f}
+      \strng{fullhash}{0a1d6a66dd24b03595481ecc25c7b29e}
+      \strng{bibnamehash}{4c20aafd141a6f6004525b6459625e7f}
+      \strng{authorbibnamehash}{4c20aafd141a6f6004525b6459625e7f}
+      \strng{authornamehash}{4c20aafd141a6f6004525b6459625e7f}
+      \strng{authorfullhash}{0a1d6a66dd24b03595481ecc25c7b29e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISMM'07, Rio de Janeiro, Brazil}
+      \field{month}{01}
+      \field{title}{Gray-level hit-or-miss transform based region-growing for automatic segmentation of 3D coronary arteries}
+      \field{year}{2007}
+    \endentry
+    \entry{3d-r2n2}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=18b1ca0aff0216311656a971cdab5b82}{%
+           family={Choy},
+           familyi={C\bibinitperiod},
+           given={Christopher\bibnamedelima B},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=191294de69066c0731087c6eeba7546d}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Danfei},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d9806662b24ca486664faa2ddb093991}{%
+           family={Gwak},
+           familyi={G\bibinitperiod},
+           given={JunYoung},
+           giveni={J\bibinitperiod}}}%
+        {{hash=983d591f2f65ee1e0373cdf4378da02d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=e29c20003a517abaaac28852301c03c2}{%
+           family={Savarese},
+           familyi={S\bibinitperiod},
+           given={Silvio},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e28cf39d67b4b68efbd0c583e086ec7}
+      \strng{fullhash}{8e17299f3a3846765a301c0ba02a0a08}
+      \strng{bibnamehash}{2e28cf39d67b4b68efbd0c583e086ec7}
+      \strng{authorbibnamehash}{2e28cf39d67b4b68efbd0c583e086ec7}
+      \strng{authornamehash}{2e28cf39d67b4b68efbd0c583e086ec7}
+      \strng{authorfullhash}{8e17299f3a3846765a301c0ba02a0a08}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the European Conference on Computer Vision ({ECCV})}
+      \field{title}{3D-R2N2: A Unified Approach for Single and Multi-view 3D Object Reconstruction}
+      \field{year}{2016}
+    \endentry
+    \entry{deepmvs}{article}{}
+      \name{author}{5}{}{%
+        {{hash=ef347dd116f172bc3646a3324bba3c53}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Po{-}Han},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d45fc47eba7e85d1443498f59288ca4f}{%
+           family={Matzen},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=25901f326ed5464d64c6766e30a6cff7}{%
+           family={Kopf},
+           familyi={K\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9b6bb9aa3e5ebab01f9edc88ec431d1a}{%
+           family={Ahuja},
+           familyi={A\bibinitperiod},
+           given={Narendra},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a3fac2b7d25dd5d8cc80042d15dccf25}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jia{-}Bin},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{e66525dbea6656be1d59a44d64ecfbe9}
+      \strng{fullhash}{205afcc66e1ed435aec7bb7645ac72b1}
+      \strng{bibnamehash}{e66525dbea6656be1d59a44d64ecfbe9}
+      \strng{authorbibnamehash}{e66525dbea6656be1d59a44d64ecfbe9}
+      \strng{authornamehash}{e66525dbea6656be1d59a44d64ecfbe9}
+      \strng{authorfullhash}{205afcc66e1ed435aec7bb7645ac72b1}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{DeepMVS: Learning Multi-view Stereopsis}
+      \field{volume}{abs/1804.00650}
+      \field{year}{2018}
+      \verb{eprint}
+      \verb 1804.00650
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1804.00650
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1804.00650
+      \endverb
+    \endentry
+    \entry{segmentation_all}{article}{}
+      \name{author}{4}{}{%
+        {{hash=2058ec5e12544e0f4bbe22f6f3a5255e}{%
+           family={Lesage},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a9476293c5d61b79942202a54f726db1}{%
+           family={Angelini},
+           familyi={A\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8733ed7ed418807567824b122993ca2c}{%
+           family={Bloch},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=94cad6cf553fa4dea36312b318609f65}{%
+           family={Funka-Lea},
+           familyi={F\bibinithyphendelim L\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{263ee2e1281452317b068bb184d16f13}
+      \strng{fullhash}{70f92427a681b0908c2f5747ee4511c2}
+      \strng{bibnamehash}{263ee2e1281452317b068bb184d16f13}
+      \strng{authorbibnamehash}{263ee2e1281452317b068bb184d16f13}
+      \strng{authornamehash}{263ee2e1281452317b068bb184d16f13}
+      \strng{authorfullhash}{70f92427a681b0908c2f5747ee4511c2}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Med Image Anal}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{{{A} review of 3{D} vessel lumen segmentation techniques: models, features and extraction schemes}}
+      \field{volume}{13}
+      \field{year}{2009}
+      \field{pages}{819\bibrangedash 845}
+      \range{pages}{27}
+    \endentry
+    \entry{segmentation_retinal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=14f119ad7f9f78eeb328db24baaadffa}{%
+           family={{Liskowski}},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a6675974b0b072c7a8a4867542d24628}{%
+           family={{Krawiec}},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{962f07cd783a9b4ec46e565f86797c3a}
+      \strng{fullhash}{962f07cd783a9b4ec46e565f86797c3a}
+      \strng{bibnamehash}{962f07cd783a9b4ec46e565f86797c3a}
+      \strng{authorbibnamehash}{962f07cd783a9b4ec46e565f86797c3a}
+      \strng{authornamehash}{962f07cd783a9b4ec46e565f86797c3a}
+      \strng{authorfullhash}{962f07cd783a9b4ec46e565f86797c3a}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Medical Imaging}
+      \field{number}{11}
+      \field{title}{Segmenting Retinal Blood Vessels With Deep Neural Networks}
+      \field{volume}{35}
+      \field{year}{2016}
+      \field{pages}{2369\bibrangedash 2380}
+      \range{pages}{12}
+    \endentry
+    \entry{path_finding}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=fa42917c05c683f2aa2253423c9da678}{%
+           family={Olabarriaga},
+           familyi={O\bibinitperiod},
+           given={Silvia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=592692a6e192823011898332b2345b70}{%
+           family={Breeuwer},
+           familyi={B\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1cdf2abe32a2e422600b9f4665aeeeac}{%
+           family={Niessen},
+           familyi={N\bibinitperiod},
+           given={W.J.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \strng{fullhash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \strng{bibnamehash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \strng{authorbibnamehash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \strng{authornamehash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \strng{authorfullhash}{7e72d332ea5f5dfb00744f77819c5ef4}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lecture Notes in Computer Science}
+      \field{month}{11}
+      \field{title}{Minimum Cost Path Algorithm for Coronary Artery Central Axis Tracking in CT Images}
+      \field{volume}{2879}
+      \field{year}{2003}
+      \field{pages}{687\bibrangedash 694}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/978-3-540-39903-2_84
+      \endverb
+    \endentry
+    \entry{reconstruction_probability}{article}{}
+      \name{author}{9}{}{%
+        {{hash=8560e1cf8c17b4d786205c2cc4835895}{%
+           family={Rempfler},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3a35acb0163f13b07a3db997b63e81ea}{%
+           family={Schneider},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f2f678bbe2f4fe61d6d30581ceee7629}{%
+           family={Ielacqua},
+           familyi={I\bibinitperiod},
+           given={G.\bibnamedelimi D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=74eb27412999997d51958c8f7780b566}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=931b42bba341fde0ad59c9e7840d81b8}{%
+           family={Stock},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=69174fdaded28a1a46c65e8097108cf1}{%
+           family={Klohs},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0b0088346b10bcc4dcd97c21ac9d3205}{%
+           family={Sz?kely},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1e8cd21dfb19c935e954d1185ae9a70e}{%
+           family={Andres},
+           familyi={A\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=b7af3107103b5021f8c7e2a9b5493ba8}{%
+           family={Menze},
+           familyi={M\bibinitperiod},
+           given={B.\bibnamedelimi H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{039e7f0e7e484ac9d1a6b3e3eb7456f9}
+      \strng{fullhash}{4753d2ad82875c29d95173b4f0993a72}
+      \strng{bibnamehash}{039e7f0e7e484ac9d1a6b3e3eb7456f9}
+      \strng{authorbibnamehash}{039e7f0e7e484ac9d1a6b3e3eb7456f9}
+      \strng{authornamehash}{039e7f0e7e484ac9d1a6b3e3eb7456f9}
+      \strng{authorfullhash}{4753d2ad82875c29d95173b4f0993a72}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Med Image Anal}
+      \field{month}{10}
+      \field{number}{1}
+      \field{title}{{{R}econstructing cerebrovascular networks under local physiological constraints by integer programming}}
+      \field{volume}{25}
+      \field{year}{2015}
+      \field{pages}{86\bibrangedash 94}
+      \range{pages}{9}
+    \endentry
+    \entry{segmentation_dl}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d6e40d874aa55fbd49fa57b10105d864}{%
+           family={Sanches},
+           familyi={S\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7bdf621142763e14d55aa431c33fb13e}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ac2516879112aa95bee77e4a04ad804b}{%
+           family={Vigon},
+           familyi={V\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=5b1bc15e60af00272619faa7d5fd5601}{%
+           family={Naegel},
+           familyi={N\bibinitperiod},
+           given={Beno{ı̂}t},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{2fd0f418d9cca8842e830d9eb1fcd027}
+      \strng{fullhash}{4d0fa805d5c79704b7b20e227b93607c}
+      \strng{bibnamehash}{2fd0f418d9cca8842e830d9eb1fcd027}
+      \strng{authorbibnamehash}{2fd0f418d9cca8842e830d9eb1fcd027}
+      \strng{authornamehash}{2fd0f418d9cca8842e830d9eb1fcd027}
+      \strng{authorfullhash}{4d0fa805d5c79704b7b20e227b93607c}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Cerebrovascular Network Segmentation on {MRA} Images with Deep Learning}
+      \field{volume}{abs/1812.01752}
+      \field{year}{2018}
+      \verb{eprint}
+      \verb 1812.01752
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1812.01752
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1812.01752
+      \endverb
+    \endentry
+    \entry{morphology}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=730662ad551f1ba3bb1ad9039ecc144e}{%
+           family={Wilkinson},
+           familyi={W\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1d61926a61f0e73eebd8c48ba033ab64}{%
+           family={Westenberg},
+           familyi={W\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e3c149df9b6b8254a93cd138902495d}
+      \strng{fullhash}{9e3c149df9b6b8254a93cd138902495d}
+      \strng{bibnamehash}{9e3c149df9b6b8254a93cd138902495d}
+      \strng{authorbibnamehash}{9e3c149df9b6b8254a93cd138902495d}
+      \strng{authornamehash}{9e3c149df9b6b8254a93cd138902495d}
+      \strng{authorfullhash}{9e3c149df9b6b8254a93cd138902495d}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lecture Notes in Computer Science}
+      \field{month}{11}
+      \field{title}{Shape Preserving Filament Enhancement Filtering}
+      \field{volume}{2208}
+      \field{year}{2002}
+      \verb{doi}
+      \verb 10.1007/3-540-45468-3_92
+      \endverb
+    \endentry
+    \entry{3dvaegan}{article}{}
+      \name{author}{5}{}{%
+        {{hash=3a7d08fff1af967fe4513ac63790e97d}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jiajun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=89ece7512ff2aa3260981924c38151c7}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Chengkai},
+           giveni={C\bibinitperiod}}}%
+        {{hash=dcc9916c36daf6b4d708323fea582d1d}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Tianfan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d141cc377b58d4e4a58a4983e3052073}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={William\bibnamedelima T.},
+           giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=bf071dd4a01b75623408640c57abfd8e}{%
+           family={Tenenbaum},
+           familyi={T\bibinitperiod},
+           given={Joshua\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{d68ca7b1d5cb4921c0a2aa9237be88bd}
+      \strng{fullhash}{932ee4a447abf5a273184e1dccd263cb}
+      \strng{bibnamehash}{d68ca7b1d5cb4921c0a2aa9237be88bd}
+      \strng{authorbibnamehash}{d68ca7b1d5cb4921c0a2aa9237be88bd}
+      \strng{authornamehash}{d68ca7b1d5cb4921c0a2aa9237be88bd}
+      \strng{authorfullhash}{932ee4a447abf5a273184e1dccd263cb}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling}
+      \field{volume}{abs/1610.07584}
+      \field{year}{2016}
+      \verb{eprint}
+      \verb 1610.07584
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1610.07584
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1610.07584
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

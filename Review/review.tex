@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+% TEMPLATE for UCLA CS168
+
+\documentclass[letterpaper, 10 pt, journal]{ieeeconf} 
+
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{biblatex}
+\addbibresource{bibfile.bib}
+
+\title{\LARGE \bf 3D Neurovascular Reconstruction}
+
+\author{Team \#36: Connor Chin, Kevin Li}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\section{Introduction}
+
+Diseases in the cerebrovascular network, such as strokes, aneurysms, and Alzheimer’s are some of the leading causes of death and disabilities worldwide.
+In treatment planning, it is often essential to create a 3D model of the vascular network, which can be used for segmentation, classification, or anatomical object localization.
+Currently, the techniques of magnetic resonance (MR) and 3D computed tomographic (CT) angiography can produce three-dimensional volume data directly;
+however, they can also bring a prohibitive set of disadvantages and inaccessibilities.
+Rather, digital subtraction angiography using X-rays is more commonly used to produce high resolution images, but they may be difficult to decipher because they are only two-dimensional single or biplane projections.
+In this review, we propose a deep-learning-based method for reconstructing blood vessels in cerebrovascular imagery.
+
+
+\section{Related Works}
+
+In the field of medical image processing, many methods have been developed for segmentation of the cerebrovascular network: minimum path-finding, thresholding, extraction using morphology, statistical approaches, among others and various hybrids.
+
+Region-growing methods are computationally efficient propagation algorithms that require a starting seed and assumptions about vessel shape and size, working best with well-contrasted vessels \cite{region_growing}.
+Path-finding algorithms can accurately detect vessel segments by computing a minimum intensity and connectedness criteria \cite{path_finding}.
+They, however, can be computationally expensive and generally compute vessel segments rather than an entire vascular tree.
+Morphological filtering is a theory of non-linear analysis that is robust to noise.
+They can be used in conjunction with other criteria or classification strategies to segment vascular structures automatically \cite{morphology}.
+
+While by no means a comprehensive review, (see \cite{segmentation_all} for further details), we observe that most segmentation methods are heuristic- or rule-based and make assumptions about the underlying structure and shape of vessels.
+Additionally, these algorithms often require manual intervention at some point, whether in requiring seeds or post-processing of the graph.
+Most importantly, these segmentation algorithms tend to accurately enforce local vessel constraints while ignoring global vascular network motifs.
+Therefore, it is often advantageous to reconstruct the entire vascular structure rather than segment portions of it.
+
+We note that there have been attempts to alleviate the aforementioned weaknesses, such as with the probabilistic model of Rempfler et al. \cite{reconstruction_probability}.
+Recently, deep learning methods have been applied to segmentation of retinal blood vessels with reasonable success, using a standard CNN design \cite{segmentation_retinal}.
+Sanches et al. \cite{segmentation_dl} proposed a cross between U-net and Inception for segmentation, titled Uception, which outperformed the original U-net.
+However, to the best of our knowledge, there exist no deep learning designs dedicated to reconstructing the cerebrovascular network in entirety.
+
+The current state-of-the-art deep learning 3D-reconstruction models include variants of MVS, 3D-R\textsuperscript{2}N\textsuperscript{2}, and 3D VAE/GAN models.
+
+Multi-view Stereo (MVS) methods attempt to reconstruct 3D images from 2D projections at known camera angles.
+Huang et. al designed DeepMVS, a deep CNN with many preprocessing techniques to outperform conventional MVS algorithms such as COLMAP \cite{deepmvs}.
+The conventional MVS algorithms tends to produce results that are distored or noisy, while DeepMVS occasionally produces jagged edges.
+Overall, DeepMVS shows a quantitative improvement over conventional methods.
+
+3D-R\textsuperscript{2}N\textsuperscript{2} uses three components: a 2D CNN, a 3D convolutional LSTM (a novel architecture), and a 3D-DCNN \cite{3d-r2n2}.
+Its primary advantages are that it unifies single- and multi-view reconstruction, and that it requires minimal supervision in training and testing.
+Reportedly, it outperforms current state-of-the-art models in single-view reconstruction.
+
+Finally, standard VAE/GAN methods have also been extended into three dimensions \cite{3dvaegan}.
+Results show that they can be effective in single image reconstruction, though this was tested with classes of objects.
+As with traditional VAE/GANs, they are able to generate multiple plausible outputs for a given input.
+
+\section{Proposal}
+
+From a methodical standpoint, our motivation is to implement a deep-learning model dedicated to reconstructing the full cerebrovascular network.
+We hypothesize that using the current state-of-the-art 3D reconstruction neural nets will achieve more reliable results than the methods mentioned previously.
+While 3D-R\textsuperscript{2}N\textsuperscript{2} achieves the highest performance single-view reconstruction, their three separate components increases training time and difficulty of hyperparameter tuning.
+It is potentially possible to simplify the recurrent component, as we are primarily working with single or biplane views.
+Though, the preliminary design inclination is toward the 3D VAE/GAN, due to their simplicity and performance in single-view reconstruction.
+
+
+
+\cleardoublepage
+
+\printbibliography
+% \begin{thebibliography}{99}
+
+% \bibitem{c1} G. O. Young, Synthetic structure of industrial plastics (Book style with paper title and editor),Ó 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15Ð64.
+
+% \bibitem{c2} Pedro Sanches and Cyril Meyer and Vincent Vigon and Beno{\^{\i}}t Naegel, "Cerebrovascular Network Segmentation on {MRA} Images with Deep Learning", \textit{CoRR}, 2018.
+% \bibitem{c2} https://academic.oup.com/neurosurgery/article-abstract/41/2/403/2856323
+% \bibitem{c3} https://www.osti.gov/pages/servlets/purl/1245820
+% \bibitem{c4} https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3132942/
+% \bibitem{c5} 
+
+% \end{thebibliography}
+
+\end{document}
