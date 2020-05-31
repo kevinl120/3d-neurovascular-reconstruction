@@ -7,7 +7,7 @@ import vtkplotlib as vpl
 
 from constants import *
 
-def rename_data(dirs=[STL_DIR, VOXEL_DIR], names=['morph', 'voxel']):
+def rename_data(dirs=[STL_DIR, VOXEL_TXT_DIR], names=['morph', 'voxel']):
     """ Renames files in each dir to {name}_0000.ext. """
     if len(dirs) != len(names):
         raise ValueError('Expected {} names for renaming {} dirs, instead found {} names'.format(len(dirs), len(dirs), len(names)))
@@ -57,9 +57,9 @@ def get_proj_files(stl_dir=STL_DIR, proj_dir=PROJ_DIR, camera_directions=[(1,0,0
             np.savetxt(os.path.join(proj_dir, fname), v, fmt='%i', delimiter=',')
 
 
-def convert_voxel_files(voxel_dir=VOXEL_DIR, voxel_npy_dir=VOXEL_NPY_DIR):
+def convert_voxel_files(voxel_txt_dir=VOXEL_TXT_DIR, voxel_npy_dir=VOXEL_NPY_DIR):
     """ Convert coordinate triplet files into 3D matrix files. """
-    voxel_files = glob.glob(os.path.join(voxel_dir, '*.txt'))
+    voxel_files = glob.glob(os.path.join(voxel_txt_dir, '*.txt'))
     voxel_files.sort()
     for f in voxel_files[:1]:
         arr = np.zeros(VOXEL_SHAPE)
@@ -79,14 +79,14 @@ def convert_voxel_files(voxel_dir=VOXEL_DIR, voxel_npy_dir=VOXEL_NPY_DIR):
 def make_data_dirs():
     os.makedirs(STL_DIR, exist_ok=True)
     os.makedirs(PROJ_DIR, exist_ok=True)
-    os.makedirs(VOXEL_DIR, exist_ok=True)
+    os.makedirs(VOXEL_TXT_DIR, exist_ok=True)
     os.makedirs(VOXEL_NPY_DIR, exist_ok=True)
 
 
 def main():
-    # make_data_dirs()
+    make_data_dirs()
     # get_proj_files()
-    # convert_voxel_files()
+    convert_voxel_files()
     pass
 
 
