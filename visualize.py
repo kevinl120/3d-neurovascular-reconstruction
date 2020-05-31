@@ -9,7 +9,7 @@ def plot_projection(proj):
     if isinstance(proj, str):
         fig.suptitle(proj)
         proj = np.genfromtxt(proj, dtype=int, delimiter=',')
-    ax.pcolor(proj, cmap='Greys', vmin=0.0, vmax=1.0)
+    ax.pcolormesh(proj, cmap='Greys', vmin=0.0, vmax=1.0)
     ax.set_aspect('equal')
     plt.axis('off')
     plt.show()
