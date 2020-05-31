@@ -1,4 +1,11 @@
+# Python
+venv/
+__pycache__/
+
+
+# Project
 Data/
 
-venv/
+
+# Environment
 .vscode/
