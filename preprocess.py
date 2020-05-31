@@ -61,11 +61,17 @@ def convert_voxel_files(voxel_dir=VOXEL_DIR, voxel_npy_dir=VOXEL_NPY_DIR):
     """ Convert coordinate triplet files into 3D matrix files. """
     voxel_files = glob.glob(os.path.join(voxel_dir, '*.txt'))
     voxel_files.sort()
-    for f in voxel_files:
+    for f in voxel_files[:1]:
         arr = np.zeros(VOXEL_SHAPE)
         voxels = np.genfromtxt(f, dtype=int, delimiter=', ')
+
+        # Center voxelized construction
+        x_shift = (VOXEL_SHAPE[0] - np.max(voxels[:, 0])) // 2
+        y_shift = (VOXEL_SHAPE[1] - np.max(voxels[:, 1])) // 2
+        z_shift = (VOXEL_SHAPE[2] - np.max(voxels[:, 2])) // 2
+
         for v in voxels:
-            arr[v[0]][v[1]][v[2]] = 1
+            arr[v[0]+x_shift][v[1]+y_shift][v[2]+z_shift] = 1
         fname = f.split('/')[-1].split('.')[0] + '.npy'
         np.save(os.path.join(voxel_npy_dir, fname), arr)
 
@@ -78,9 +84,9 @@ def make_data_dirs():
 
 
 def main():
-    make_data_dirs()
+    # make_data_dirs()
     # get_proj_files()
-    convert_voxel_files()
+    # convert_voxel_files()
     pass
 
 
