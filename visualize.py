@@ -13,11 +13,15 @@ def plot_projection(proj, view=None):
     """
     if isinstance(proj, str):
         proj = np.load(proj)
+    proj = proj.reshape((-1, PROJ_SHAPE[0], PROJ_SHAPE[1]))
     if view is not None or proj.shape == PROJ_SHAPE:
+        if view is not None:
+            arr = proj[view]
+        else:
+            arr = proj
         fig = plt.figure()
-        proj = proj[view]
         ax = fig.gca()
-        ax.pcolormesh(proj, cmap='Greys', vmin=0.0, vmax=1.0)
+        ax.pcolormesh(arr, cmap='Greys', vmin=0.0, vmax=1.0)
         ax.set_aspect('equal')
         plt.axis('off')
         plt.show()
@@ -25,8 +29,8 @@ def plot_projection(proj, view=None):
         fig, ax = plt.subplots(nrows=2, ncols=proj.shape[0]//2)
         for i, row in enumerate(ax):
             for j, col in enumerate(row):
-                view = proj[i*len(ax[0])+j]
-                col.pcolormesh(view, cmap='Greys', vmin=0.0, vmax=1.0)
+                arr = proj[i*len(ax[0])+j]
+                col.pcolormesh(arr, cmap='Greys', vmin=0.0, vmax=1.0)
                 col.set_aspect('equal')
                 col.axis('off')
         plt.show()
