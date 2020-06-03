@@ -14,7 +14,7 @@ def plot_projection(proj, view=None):
     if isinstance(proj, str):
         proj = np.load(proj)
     proj = proj.reshape((-1, PROJ_SHAPE[0], PROJ_SHAPE[1]))
-    if view is not None or proj.shape == PROJ_SHAPE:
+    if view is not None or proj.shape[0] == 1:
         if view is not None:
             arr = proj[view]
         else:
@@ -26,7 +26,7 @@ def plot_projection(proj, view=None):
         plt.axis('off')
         plt.show()
     else:
-        fig, ax = plt.subplots(nrows=2, ncols=proj.shape[0]//2)
+        fig, ax = plt.subplots(nrows=2, ncols=NUM_VIEWS//2)
         for i, row in enumerate(ax):
             for j, col in enumerate(row):
                 arr = proj[i*len(ax[0])+j]
@@ -49,7 +49,7 @@ def plot_voxels(vox):
 def main():
     proj_files = glob.glob(os.path.join(PROJ_DIR, '*.npy'))
     proj_files.sort()
-    for i in range(1):
+    for i in range(3):
         plot_projection(proj_files[i])
 
     # plot_voxels('./Data/voxel_npy/voxel_0000.npy')

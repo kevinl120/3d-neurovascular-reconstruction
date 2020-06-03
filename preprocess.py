@@ -20,7 +20,7 @@ def rename_data(dirs=[STL_DIR, VOXEL_TXT_DIR], names=['morph', 'voxel']):
             os.rename(path, new_path)
 
 
-def get_projections(file, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0), (0,0,1), (0,0,-1)]):
+def get_projections(file, camera_directions=CAMERA_DIRS):
     """ Get projection views in given camera directions from an STL file.
 
     Returns: Numpy array of shape (PROJ_SHAPE, len(camera_directions)).
@@ -45,7 +45,7 @@ def get_projections(file, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0
     return views
 
 
-def get_proj_files(stl_dir=STL_DIR, proj_dir=PROJ_DIR, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0), (0,0,1), (0,0,-1)]):
+def get_proj_files(stl_dir=STL_DIR, proj_dir=PROJ_DIR, camera_directions=CAMERA_DIRS):
     """ Write projection(s) of each file in stl_dir into proj_dir.
     
     Note: My device crashes when running more than 40 files continously. """
