@@ -23,7 +23,7 @@ def rename_data(dirs=[STL_DIR, VOXEL_TXT_DIR], names=['morph', 'voxel']):
 def get_projections(file, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0), (0,0,1), (0,0,-1)]):
     """ Get projection views in given camera directions from an STL file.
 
-    Returns: List of numpy arrays of shape PROJ_SHAPE.
+    Returns: Numpy array of shape (len(camera_directions), PROJ_SHAPE).
     """
     views = []
     for dir in camera_directions[::-1]:
@@ -41,7 +41,7 @@ def get_projections(file, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0
         arr = cv2.resize(arr, dsize=PROJ_SHAPE, interpolation=cv2.INTER_LINEAR)
         vpl.close()
         views.append(arr)
-    return views
+    return np.array(views)
 
 
 def get_proj_files(stl_dir=STL_DIR, proj_dir=PROJ_DIR, camera_directions=[(1,0,0), (-1,0,0), (0,1,0), (0,-1,0), (0,0,1), (0,0,-1)]):
@@ -50,11 +50,10 @@ def get_proj_files(stl_dir=STL_DIR, proj_dir=PROJ_DIR, camera_directions=[(1,0,0
     Note: My device crashes when running more than 40 files continously. """
     stl_files = glob.glob(os.path.join(stl_dir, '*.stl'))
     stl_files.sort()
-    for f in stl_files:
+    for f in stl_files[40:]:
         views = get_projections(f, camera_directions=camera_directions)
-        for i, v in enumerate(views):
-            fname = f.split('/')[-1].split('.')[0] + '_{}.txt'.format(i)
-            np.savetxt(os.path.join(proj_dir, fname), v, fmt='%i', delimiter=',')
+        fname = f.split('/')[-1].split('.')[0] + '.npy'
+        np.save(os.path.join(proj_dir, fname), views)
 
 
 def convert_voxel_files(voxel_txt_dir=VOXEL_TXT_DIR, voxel_npy_dir=VOXEL_NPY_DIR):
@@ -85,7 +84,7 @@ def make_data_dirs():
 
 def main():
     make_data_dirs()
-    # get_proj_files()
+    get_proj_files()
     convert_voxel_files()
     pass
 
