@@ -1,4 +1,5 @@
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras import backend as K
 from tensorflow.keras.layers import Input, Dense, Reshape, Flatten, Conv2D, MaxPooling2D, UpSampling3D, Conv3D, Conv3DTranspose
 from tensorflow.keras.losses import binary_crossentropy
@@ -6,6 +7,13 @@ from tensorflow.keras.models import Model
 
 from constants import *
 import preprocess
+
+
+def weighted_bce(y_true, y_pred):
+    weights = (y_true * 40) + 1.
+    bce = K.binary_crossentropy(y_true, y_pred)
+    weighted_bce = K.mean(bce * weights)
+    return weighted_bce
 
 
 def unison_shuffled_copies(a, b):
@@ -55,11 +63,12 @@ def make_dnn(**kwargs):
 
 def main():
     x_train, y_train = preprocess.load_data()
+    print(np.sum(x_train[0]))
     x_train, y_train = unison_shuffled_copies(x_train, y_train)
     dnn = make_dnn()
-    dnn.compile(optimizer='Adam', loss=binary_crossentropy)
+    dnn.compile(optimizer='Adam', loss=weighted_bce)
     dnn.summary()
-    history = dnn.fit(x_train, y_train, batch_size=None, epochs=5, validation_split=0.1)
+    history = dnn.fit(x_train, y_train, batch_size=None, epochs=1, validation_split=0.1)
 
 if __name__ == '__main__':
     main()
