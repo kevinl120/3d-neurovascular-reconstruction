@@ -27,32 +27,31 @@ def make_dnn(**kwargs):
     x = inputs
 
     # Encoder
-    x = Conv2D(32, 7, activation='relu', padding='same')(x)
+    x = Conv2D(16, 7, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
     x = Conv2D(32, 3, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
     x = Conv2D(32, 3, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
-    x = Conv2D(32, 3, activation='relu', padding='same')(x)
+    x = Conv2D(64, 3, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
-    x = Conv2D(32, 3, activation='relu', padding='same')(x)
+    x = Conv2D(64, 3, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
-    x = Conv2D(32, 3, activation='relu', padding='same')(x)
+    x = Conv2D(128, 3, activation='relu', padding='same')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
     x = Flatten()(x)
 
     # FC
-    x = Dense(64, activation='relu')(x)
-    x = Reshape((4, 4, 4, 1))(x)
+    x = Dense(2048, activation='relu')(x)
+    x = Reshape((8, 8, 8, 4))(x)
 
     # Decoder
     x = UpSampling3D(size=(2, 2, 2))(x)
-    x = Conv3D(32, 3, activation='relu', padding='same')(x)
+    x = Conv3D(128, 3, activation='relu', padding='same')(x)
+    x = UpSampling3D(size=(2, 2, 2))(x)
+    x = Conv3D(64, 3, activation='relu', padding='same')(x)
     x = UpSampling3D(size=(2, 2, 2))(x)
     x = Conv3D(32, 3, activation='relu', padding='same')(x)
-    x = UpSampling3D(size=(2, 2, 2))(x)
-    x = Conv3D(32, 3, activation='relu', padding='same')(x)
-    x = UpSampling3D(size=(2, 2, 2))(x)
     x = Conv3D(1, 3, activation='sigmoid', padding='same')(x)
     
     outputs = Reshape((64, 64, 64))(x)
