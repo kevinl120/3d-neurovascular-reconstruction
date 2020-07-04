@@ -9,23 +9,8 @@ from constants import *
 import preprocess
 
 
-arr = np.zeros((64,64,64))
-for i in range(64):
-    for j in range(64):
-        for k in range(64):
-            arr[i][j][k] = i+j+k
-
-res = arr
-res = np.minimum(res, np.flip(arr, axis=0))
-res = np.minimum(res, np.flip(arr, axis=1))
-res = np.minimum(res, np.flip(arr, axis=2))
-res = np.minimum(res, np.flip(arr, axis=(0,1)))
-res = np.minimum(res, np.flip(arr, axis=(0,2)))
-res = np.minimum(res, np.flip(arr, axis=(1,2)))
-
 def weighted_bce(y_true, y_pred):
     weights = (y_true * 2) + 1.
-    weights *= res
     bce = K.binary_crossentropy(y_true, y_pred)
     weighted_bce = K.mean(bce * weights)
     return weighted_bce
@@ -37,7 +22,7 @@ def unison_shuffled_copies(a, b):
     return a[p], b[p]
 
 
-def make_dnn(**kwargs):
+def make_shallow_autoencoder(**kwargs):
     inputs = Input(shape=(PROJ_SHAPE[0], PROJ_SHAPE[1], NUM_VIEWS))
     x = inputs
 
@@ -64,7 +49,7 @@ def make_dnn(**kwargs):
 
     # FC
     x = Dense(4320, activation='relu')(x)
-    x = Dropout(0.5)(x)
+    x = Dropout(0.2)(x)
     x = Reshape((6, 6, 6, 20))(x)
 
     # Decoder
@@ -83,17 +68,18 @@ def make_dnn(**kwargs):
     
     outputs = Reshape((64, 64, 64))(x)
 
-    dnn = Model(inputs=inputs, outputs=outputs)
-    return dnn
+    model = Model(inputs=inputs, outputs=outputs)
+
+    return model
 
 
 def main():
-    # x_train, y_train = preprocess.load_data()
-    # x_train, y_train = unison_shuffled_copies(x_train, y_train)
+    x_train, y_train = preprocess.load_data()
+    x_train, y_train = unison_shuffled_copies(x_train, y_train)
+    print(x_train.shape, y_train.shape)
     dnn = make_dnn()
-    # dnn.compile(optimizer='Adam', loss=weighted_bce)
-    dnn.summary()
-    # history = dnn.fit(x_train, y_train, batch_size=None, epochs=1, validation_split=0.1)
+    dnn.compile(optimizer='Adam', loss=weighted_bce)
+    history = dnn.fit(x_train, y_train, batch_size=None, epochs=1, validation_split=0.1)
 
 if __name__ == '__main__':
     main()

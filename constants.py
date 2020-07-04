@@ -2,9 +2,9 @@ import os
 
 DATA_DIR = 'Data'
 STL_DIR = os.path.join(DATA_DIR, 'stl')
-PROJ_DIR = os.path.join(DATA_DIR, 'projection')
+PROJ_DIR = os.path.join(DATA_DIR, 'projection_256')
 VOXEL_TXT_DIR = os.path.join(DATA_DIR, 'voxel_txt')
-VOXEL_NPY_DIR = os.path.join(DATA_DIR, 'voxel_npy')
+VOXEL_NPY_DIR = os.path.join(DATA_DIR, 'voxel_npy_64')
 
 PROJ_LEN = 256
 PROJ_SHAPE = (PROJ_LEN, PROJ_LEN)
