@@ -42,6 +42,8 @@ def plot_voxels(vox):
         fig.suptitle(vox)
         arr = np.load(vox)
         arr = arr[0, :, :, :, 0]
+        import pdb
+        pdb.set_trace()
     ax = fig.gca(projection='3d')
     ax.voxels(arr)
     plt.show()

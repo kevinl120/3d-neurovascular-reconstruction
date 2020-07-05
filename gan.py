@@ -1,3 +1,6 @@
+from constants import *
+import preprocess
+
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import backend as K
@@ -6,8 +9,6 @@ from tensorflow.keras.losses import binary_crossentropy
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 
-from constants import *
-import preprocess
 
 class GAN():
     def __init__(self):
@@ -49,7 +50,7 @@ class GAN():
         outputs = Dense(1, activation='sigmoid')(x)
         return Model(inputs, outputs)
     
-    def train(self, X_train, epochs=100, batch_size=32):
+    def train(self, X_train, epochs=100, batch_size=8):
         d_loss = (999999, 0)
         valid = np.ones((batch_size, 1))
         fake = np.zeros((batch_size, 1))
@@ -59,6 +60,8 @@ class GAN():
             noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
             gen_imgs = self.generator.predict(noise)
 
+            imgs = np.reshape(imgs, (-1, VOXEL_SHAPE[0], VOXEL_SHAPE[1], VOXEL_SHAPE[2], 1))
+            gen_imgs = np.reshape(gen_imgs, (-1, VOXEL_SHAPE[0], VOXEL_SHAPE[1], VOXEL_SHAPE[2], 1))
 
             if d_loss[1] > 0.8:
                 print('Discriminator accuracy last batch greater than 0.8, skipping discriminator training this batch.')
