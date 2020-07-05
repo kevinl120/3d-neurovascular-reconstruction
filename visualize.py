@@ -41,18 +41,20 @@ def plot_voxels(vox):
     if isinstance(vox, str):
         fig.suptitle(vox)
         arr = np.load(vox)
+        arr = arr[0, :, :, :, 0]
     ax = fig.gca(projection='3d')
     ax.voxels(arr)
     plt.show()
 
 
 def main():
-    proj_files = glob.glob(os.path.join(PROJ_DIR, '*.npy'))
-    proj_files.sort()
-    for i in range(3):
-        plot_projection(proj_files[i])
+    # proj_files = glob.glob(os.path.join(PROJ_DIR, '*.npy'))
+    # proj_files.sort()
+    # for i in range(3):
+    #     plot_projection(proj_files[i])
 
     # plot_voxels('./Data/voxel_npy/voxel_0000.npy')
+    plot_voxels('./gan_generation/90.npy')
 
     pass
 
