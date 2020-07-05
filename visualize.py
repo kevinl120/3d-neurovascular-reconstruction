@@ -56,7 +56,7 @@ def main():
     #     plot_projection(proj_files[i])
 
     # plot_voxels('./Data/voxel_npy/voxel_0000.npy')
-    plot_voxels('./gan_generation/90.npy')
+    plot_voxels('./gan_generation/490.npy')
 
     pass
 

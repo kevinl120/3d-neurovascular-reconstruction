@@ -2,8 +2,8 @@ import cv2
 import glob
 import numpy as np
 import os
-# from stl.mesh import Mesh
-# import vtkplotlib as vpl
+from stl.mesh import Mesh
+import vtkplotlib as vpl
 
 from constants import *
 
